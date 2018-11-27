@@ -1,6 +1,7 @@
 class SockMechant:
 
 	def sol1(self,m,ar):
+		d = {}
 		for index,color in enumerate(ar):
 			d[color] = d.get(color,0) + 1
 		pairs = 0
