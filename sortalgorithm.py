@@ -42,6 +42,24 @@ class SortArray:
 		self.quick_sort(arr,left,storeindex-1)
 		self.quick_sort(arr,storeindex+1,right)
 
+	def quicksort(self,array,left,right):
+		if left >= right:
+			return
+		low = left 
+		high = right
+		key = array[low]
+		while left < right:
+			while left < right and array[right] > key:
+				right -= 1
+			array[left] = array[right]
+			while left < right and array[left] <= key:
+				left += 1
+			array[right] = array[left]
+		array[right] = key
+		self.quicksort(array,low,left - 1)
+		self.quicksort(array,left + 1,high)
+
+
 
 
 
