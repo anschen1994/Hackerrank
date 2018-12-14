@@ -19,4 +19,7 @@ class ArrayManipulation:
 		for i in l:
 			x += i 
 			res = max(x,res)
-		return res 
+		return res
+
+sol = ArrayManipulation()
+sol.sol1([1,2,3,4])

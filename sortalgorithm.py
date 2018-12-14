@@ -59,6 +59,22 @@ class SortArray:
 		self.quicksort(array,low,left - 1)
 		self.quicksort(array,left + 1,high)
 
+	def counting_sort(self,arr,left,right):
+		bound = max(arr[left:right+1])
+		d = {}
+		for i in range(bound+1):
+			d[i] = 0
+		for i in arr[left:right+1]:
+			d[i] += 1
+		index = 0
+		for key in d:
+			while d[key] > 0:
+				arr[left + index] = key
+				index += 1
+				d[key] -= 1
+		return arr 
+
+
 
 
 
@@ -66,6 +82,6 @@ class SortArray:
 if __name__ == '__main__':
 	arr = [5,4,2,2,0,1]
 	sort = SortArray()
-	sort.quick_sort(arr,0,len(arr)-1)
+	sort.counting_sort(arr,0,len(arr)-1)
 	print(arr)
 
